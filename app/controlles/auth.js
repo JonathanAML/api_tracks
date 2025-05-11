@@ -22,8 +22,8 @@ const loginCtrl = async(req, res) => {
             res.send({ error: 'User not found' })
         }
 
-        const checkPassword = (mockUser.password === password)
-
+        const checkPassword = (mockUser.password === "12345678")
+        
         //TODO JWT 👉
         const tokenSession = await tokenSign(mockUser) //TODO: 2d2d2d2d2d2d2
 
@@ -38,7 +38,7 @@ const loginCtrl = async(req, res) => {
         if (!checkPassword) {
             res.status(409)
             res.send({
-                error: 'Invalid password'
+                error: 'contraseña'
             })
             return
         }
